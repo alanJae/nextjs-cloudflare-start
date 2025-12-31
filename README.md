@@ -1,6 +1,46 @@
-# Test Edge Start
+# Next.js Cloudflare Starter
 
-基于 **Next.js 15** 的现代化全栈应用，专为部署到 **Cloudflare Workers** 优化，实现全球边缘计算的高性能体验。
+基于 **Next.js 15** 的现代化全栈应用模板，专为部署到 **Cloudflare Workers** 优化，实现全球边缘计算的高性能体验。
+
+> 🎯 这是一个**项目模板**，你可以用它快速初始化新的 Next.js + Cloudflare 项目！
+
+## 📥 使用此模板创建新项目
+
+### 方式一：使用 degit（推荐）
+
+最快速的方式，不包含 Git 历史记录：
+
+```bash
+# 使用 npx
+npx degit alanJae/nextjs-cloudflare-start my-new-project
+
+# 或者使用 pnpm
+pnpm dlx degit alanJae/nextjs-cloudflare-start my-new-project
+
+# 进入项目并安装依赖
+cd my-new-project
+pnpm install
+
+# 初始化新项目（可选，更新项目名称等）
+pnpm init-project
+```
+
+### 方式二：使用 GitHub 模板按钮
+
+1. 访问 [GitHub 仓库](https://github.com/alanJae/nextjs-cloudflare-start)
+2. 点击绿色的 **"Use this template"** 按钮
+3. 选择 **"Create a new repository"**
+4. 克隆你的新仓库并开始开发
+
+### 方式三：使用 GitHub CLI
+
+```bash
+gh repo create my-new-project --template alanJae/nextjs-cloudflare-start --clone
+cd my-new-project
+pnpm install
+```
+
+---
 
 ## ✨ 技术栈
 

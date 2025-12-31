@@ -8,6 +8,7 @@
     "build": "pnpm check-seo && next build --turbopack",
     "start": "next start",
     "lint": "eslint",
+    "init-project": "node scripts/init-project.mjs",
     "cf-build": "pnpm check-seo && npx @opennextjs/cloudflare",
     "cf-preview": "pnpm cf-build && wrangler dev",
     "cf-deploy": "pnpm cf-build && wrangler deploy"
