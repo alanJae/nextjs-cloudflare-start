@@ -161,6 +161,39 @@ export default function Component() {
 | `pnpm cf-build` | 构建 Cloudflare Workers 版本 |
 | `pnpm cf-preview` | 本地预览 Workers 部署 |
 | `pnpm cf-deploy` | 部署到 Cloudflare Workers |
+| `pnpm check-seo` | 验证 SEO 元数据长度 |
+
+## 🔍 SEO 优化
+
+### 自动生成 Sitemap 和 Robots.txt
+
+项目在**构建时自动生成** `sitemap.xml` 和 `robots.txt`，无需安装额外的包。
+
+- **Sitemap**: `/sitemap.xml` - 包含所有语言版本的页面
+- **Robots.txt**: `/robots.txt` - 指向 sitemap 并配置爬虫规则
+
+访问示例：
+- https://your-domain.com/sitemap.xml
+- https://your-domain.com/robots.txt
+
+### 配置 Base URL
+
+在环境变量中设置你的网站 URL：
+
+```bash
+# .env.local
+NEXT_PUBLIC_APP_URL=https://your-domain.com
+```
+
+如未设置，默认使用 `https://example.com`。
+
+### SEO 元数据验证
+
+构建前会自动验证翻译文件中的 SEO 元数据长度：
+- **Title**: 50-60 字符
+- **Description**: 100-200 字符
+
+配置文件：`scripts/validate-seo.mjs`
 
 ## 🌍 部署到 Cloudflare
 

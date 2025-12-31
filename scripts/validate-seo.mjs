@@ -13,8 +13,8 @@ const CONFIG = {
         label: 'SEO Title'
     },
     description: {
-        min: 140,
-        max: 150,
+        min: 100,
+        max: 200,
         label: 'SEO Description'
     }
 };
