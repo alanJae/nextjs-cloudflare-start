@@ -47,3 +47,4 @@ wrangler.toml
 
 # indexnow (optional: commit the key file or use INDEXNOW_KEY env var)
 # public/indexnow-key.txt
+workers/realtime/node_modules
