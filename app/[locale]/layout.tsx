@@ -5,6 +5,7 @@ import { locales } from '@/i18n';
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { Analytics } from "@/components/analytics";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -33,6 +34,20 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>) {
     return {
         title: t('title'),
         description: t('description'),
+        robots: {
+            index: true,
+            follow: true,
+        },
+        icons: {
+            icon: [
+                { url: '/favicon/favicon-16x16.svg', sizes: '16x16', type: 'image/svg+xml' },
+                { url: '/favicon/favicon-32x32.svg', sizes: '32x32', type: 'image/svg+xml' },
+                { url: '/favicon/favicon.ico', sizes: 'any' },
+            ],
+            apple: [
+                { url: '/favicon/apple-touch-icon-180x180.svg', sizes: '180x180', type: 'image/svg+xml' },
+            ],
+        },
     };
 }
 
@@ -61,6 +76,7 @@ export default async function LocaleLayout({
                         enableSystem
                         disableTransitionOnChange
                     >
+                        <Analytics />
                         <Header />
                         <main className="flex-1">
                             {children}

@@ -44,3 +44,6 @@ next-env.d.ts
 .worker-next/
 .wrangler/
 wrangler.toml
+
+# indexnow (optional: commit the key file or use INDEXNOW_KEY env var)
+# public/indexnow-key.txt

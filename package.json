@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "init-project": "node scripts/init-project.mjs",
+    "indexnow": "node scripts/submit-indexnow.mjs",
     "cf-build": "pnpm check-seo && npx @opennextjs/cloudflare",
     "cf-preview": "pnpm cf-build && wrangler dev",
     "cf-deploy": "pnpm cf-build && wrangler deploy"

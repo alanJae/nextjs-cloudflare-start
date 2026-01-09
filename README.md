@@ -162,6 +162,7 @@ export default function Component() {
 | `pnpm cf-preview` | 本地预览 Workers 部署 |
 | `pnpm cf-deploy` | 部署到 Cloudflare Workers |
 | `pnpm check-seo` | 验证 SEO 元数据长度 |
+| `pnpm indexnow` | 提交所有页面到 Bing IndexNow API |
 
 ## 🔍 SEO 优化
 
@@ -194,6 +195,45 @@ NEXT_PUBLIC_APP_URL=https://your-domain.com
 - **Description**: 100-200 字符
 
 配置文件：`scripts/validate-seo.mjs`
+
+### 搜索引擎索引提交
+
+使用 **Bing IndexNow** 协议快速通知搜索引擎你的内容更新：
+
+```bash
+# 提交所有页面
+pnpm indexnow
+
+# 提交单个 URL
+pnpm indexnow --url=/zh
+```
+
+**配置说明：**
+
+1. 首次运行会自动生成 API 密钥并保存到 `public/indexnow-key.txt`
+2. 确保密钥文件可通过 `https://yourdomain.com/indexnow-key.txt` 访问
+3. （可选）使用环境变量设置自定义密钥：
+   ```bash
+   INDEXNOW_KEY=your-custom-key-here
+   ```
+
+**支持的搜索引擎：**
+- Bing
+- Yandex
+- 其他支持 IndexNow 协议的搜索引擎
+
+> 💡 建议在每次内容更新或部署后运行此命令，以加速搜索引擎索引。
+
+### Analytics & Ads 配置
+
+支持 Google Analytics, Google AdSense 和 Microsoft Clarity。仅在**生产环境**且配置了对应 ID 时生效。
+
+```bash
+# .env.local 或 Cloudflare 环境变量
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GOOGLE_ADSENSE_ID=ca-pub-XXXXXXXXXX
+NEXT_PUBLIC_CLARITY_ID=xxxxxxxxxx
+```
 
 ## 🌍 部署到 Cloudflare
 

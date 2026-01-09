@@ -23,7 +23,7 @@
     },
     "seo": {
         "title": "测试边缘启动 - 专为 Cloudflare Workers 打造的 Next.js 高性能开发模板",
-        "description": "探索测试边缘启动 Test Edge Start，这是专为构建高性能 Web 应用程序而打造的终极模板，完美结合了 Next.js 15 的前沿特性与 Cloudflare Workers 的全球边缘计算能力。立即开始您的极速开发之旅，亲身体验无与伦比的全球边缘计算高性能与超低延迟优势的无限魅力与潜力。"
+        "description": "探索测试边缘启动 Test Edge Start，这是专为构建高性能 Web 应用程序打造的终极模板，完美结合了 Next.js 15 的前沿特性与 Cloudflare Workers 的全球边缘计算能力。立即开始您的极速开发之旅，亲身体验无与伦比的全球边缘计算高性能与超低延迟优势的无限魅力。"
     },
     "language": {
         "switchTo": "切换到{language}",
