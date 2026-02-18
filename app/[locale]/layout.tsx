@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { locales } from '@/i18n';
+import { headers } from 'next/headers';
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -31,9 +32,16 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'seo' });
 
+    // 获取当前 URL，设置 Canonical
+    const headersList = await headers();
+    const currentUrl = headersList.get('x-url') || '';
+
     return {
         title: t('title'),
         description: t('description'),
+        alternates: {
+            canonical: currentUrl,
+        },
         robots: {
             index: true,
             follow: true,
