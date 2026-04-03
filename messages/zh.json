@@ -45,5 +45,44 @@
             "terms": "服务条款",
             "github": "GitHub"
         }
+    },
+    "contact": {
+        "title": "联系我们",
+        "description": "有任何问题或建议？我们很乐意听取您的意见。",
+        "info": {
+            "title": "联系方式",
+            "email": {
+                "title": "电子邮箱",
+                "description": "hello@example.com"
+            },
+            "response": {
+                "title": "响应时间",
+                "description": "我们通常会在24小时内回复"
+            },
+            "support": {
+                "title": "客户支持",
+                "description": "周一至周五，上午9点至下午6点"
+            }
+        },
+        "reasons": {
+            "title": "为什么联系我们？",
+            "reason1": "技术支持和故障排除",
+            "reason2": "功能请求和建议",
+            "reason3": "商务合作机会",
+            "reason4": "一般咨询"
+        },
+        "form": {
+            "title": "发送消息",
+            "name": "姓名",
+            "namePlaceholder": "您的姓名",
+            "email": "电子邮箱",
+            "emailPlaceholder": "your@email.com",
+            "message": "消息内容",
+            "messagePlaceholder": "我们能为您做些什么？",
+            "submit": "发送消息",
+            "submitting": "正在发送...",
+            "successMessage": "消息已成功发送！",
+            "errorMessage": "出错了，请重试。"
+        }
     }
 }

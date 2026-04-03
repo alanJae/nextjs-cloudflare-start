@@ -45,5 +45,44 @@
             "terms": "Terms",
             "github": "GitHub"
         }
+    },
+    "contact": {
+        "title": "Contact Us",
+        "description": "Have questions or suggestions? We'd love to hear from you.",
+        "info": {
+            "title": "Contact Information",
+            "email": {
+                "title": "Email",
+                "description": "hello@example.com"
+            },
+            "response": {
+                "title": "Response Time",
+                "description": "We usually respond within 24 hours"
+            },
+            "support": {
+                "title": "Support",
+                "description": "Available Mon-Fri, 9am-6pm"
+            }
+        },
+        "reasons": {
+            "title": "Why Contact Us?",
+            "reason1": "Technical support and troubleshooting",
+            "reason2": "Feature requests and suggestions",
+            "reason3": "Partnership opportunities",
+            "reason4": "General inquiries"
+        },
+        "form": {
+            "title": "Send a Message",
+            "name": "Name",
+            "namePlaceholder": "Your name",
+            "email": "Email",
+            "emailPlaceholder": "your@email.com",
+            "message": "Message",
+            "messagePlaceholder": "How can we help you?",
+            "submit": "Send Message",
+            "submitting": "Sending...",
+            "successMessage": "Message sent successfully!",
+            "errorMessage": "Something went wrong. Please try again."
+        }
     }
 }
