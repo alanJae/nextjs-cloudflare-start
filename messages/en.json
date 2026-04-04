@@ -23,7 +23,11 @@
     },
     "seo": {
         "title": "Test Edge Start - Ultimate Nextjs Template for Cloudflare",
-        "description": "Discover Test Edge Start, the ultimate template for building high-performance web apps with Next.js 15 and Cloudflare Workers. Get started instantly."
+        "description": "Discover Test Edge Start, the ultimate template for building high-performance web apps with Next.js 15 and Cloudflare Workers. Get started instantly.",
+        "contact": {
+            "title": "Contact Test Edge Start Support and Project Team Today",
+            "description": "Reach Test Edge Start for support, template questions, feature requests, or partnership inquiries. We reply quickly to product and deployment feedback."
+        }
     },
     "language": {
         "switchTo": "Switch to {language}",
@@ -35,7 +39,8 @@
         "nav": {
             "home": "Home",
             "docs": "Docs",
-            "blog": "Blog"
+            "blog": "Blog",
+            "contact": "Contact"
         }
     },
     "footer": {

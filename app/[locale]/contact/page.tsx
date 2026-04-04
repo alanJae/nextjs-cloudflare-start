@@ -39,12 +39,16 @@ export default function ContactPage() {
         setSubmitStatus({ type: null, message: '' });
 
         try {
-            // TODO: Implement API route for form submission
-            // For now, simulate a successful submission
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            const response = { ok: true };
+            const response = await fetch('/api/contact/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            const data = await response.json();
 
-            if (response.ok) {
+            if (response.ok && data.success) {
                 setSubmitStatus({
                     type: 'success',
                     message: t('form.successMessage'),
@@ -57,7 +61,7 @@ export default function ContactPage() {
             } else {
                 setSubmitStatus({
                     type: 'error',
-                    message: t('form.errorMessage'),
+                    message: data.error || t('form.errorMessage'),
                 });
             }
         } catch {
@@ -179,7 +183,7 @@ export default function ContactPage() {
                                     placeholder={t('form.messagePlaceholder')}
                                     disabled={isSubmitting}
                                     rows={6}
-                                    className="flex min-h-[120px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                                    className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                 />
                             </div>
 

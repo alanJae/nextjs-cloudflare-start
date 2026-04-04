@@ -2,8 +2,13 @@ import { notFound } from 'next/navigation';
 import { getPostBySlug } from '@/lib/blog-data';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { siteConfig } from '@/lib/site-config';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+    if (!siteConfig.features.blog) {
+        return {};
+    }
+
     const { slug } = await params;
     const post = getPostBySlug(slug);
 
@@ -18,6 +23,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+    if (!siteConfig.features.blog) {
+        notFound();
+    }
+
     const { locale, slug } = await params;
     const post = getPostBySlug(slug);
 

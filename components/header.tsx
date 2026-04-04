@@ -1,23 +1,32 @@
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
+import { getLocale } from 'next-intl/server';
 import { ModeToggle } from '@/components/mode-toggle';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { siteConfig } from '@/lib/site-config';
 
 export default async function Header() {
     const t = await getTranslations('header');
+    const locale = await getLocale();
+    const prefix = locale === 'en' ? '' : `/${locale}`;
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-14 max-w-screen-2xl items-center mx-auto px-4 md:px-8">
                 <div className="mr-4 hidden md:flex">
-                    <Link className="mr-6 flex items-center space-x-2" href="/">
+                    <Link className="mr-6 flex items-center space-x-2" href={`${prefix}/`}>
                         <span className="hidden font-bold sm:inline-block">
                             {t('title')}
                         </span>
                     </Link>
                     <nav className="flex items-center space-x-6 text-sm font-medium">
-                        <Link href="/blog" className="transition-colors hover:text-foreground/80 text-foreground/60">
-                            {t('nav.blog')}
+                        {siteConfig.features.blog && (
+                            <Link href={`${prefix}/blog`} className="transition-colors hover:text-foreground/80 text-foreground/60">
+                                {t('nav.blog')}
+                            </Link>
+                        )}
+                        <Link href={`${prefix}/contact`} className="transition-colors hover:text-foreground/80 text-foreground/60">
+                            {t('nav.contact')}
                         </Link>
                     </nav>
                 </div>

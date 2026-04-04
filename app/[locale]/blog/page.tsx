@@ -1,8 +1,14 @@
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 import { blogPosts } from '@/lib/blog-data';
+import { siteConfig } from '@/lib/site-config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    if (!siteConfig.features.blog) {
+        return {};
+    }
+
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'header.nav' });
     return {
@@ -11,6 +17,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default async function BlogIndexPage({ params }: { params: Promise<{ locale: string }> }) {
+    if (!siteConfig.features.blog) {
+        notFound();
+    }
+
     const { locale } = await params;
 
     // Helper to format date
